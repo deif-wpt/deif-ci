@@ -13,3 +13,12 @@ RUN apt-get update -qq \
 # /bin/sh should be bash
 RUN echo "dash dash/sh boolean false" | debconf-set-selections \
  && dpkg-reconfigure dash
+
+# Install skalibs
+RUN git clone git://github.com/skarnet/skalibs.git \
+ && cd skalibs \
+ && git checkout v2.3.10.0 \
+ && ./configure \
+ && make install \
+ && cd .. \
+ && rm -rf skalibs
