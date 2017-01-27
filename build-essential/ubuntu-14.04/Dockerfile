@@ -7,6 +7,8 @@ RUN apt-get update -qq \
 	build-essential ssh-client git subversion curl wget \
 	check psmisc \
 	autoconf automake libtool gettext autoconf-archive pkg-config \
+	zlib1g-dev \
+	ruby bundler \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
