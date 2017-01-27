@@ -4,7 +4,7 @@ MAINTAINER Esben Haabendal, eha@deif.com
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -qq \
  && apt-get install -qq -y \
-	build-essential ssh-client git subversion curl wget \
+	build-essential ssh-client git subversion curl wget smbclient \
 	check psmisc \
 	autoconf automake libtool gettext autoconf-archive pkg-config \
 	zlib1g-dev \
