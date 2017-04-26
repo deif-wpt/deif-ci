@@ -9,6 +9,7 @@ RUN apt-get update -qq \
 	autoconf automake libtool gettext autoconf-archive pkg-config \
 	zlib1g-dev \
 	ruby bundler \
+	ssmtp \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
