@@ -7,6 +7,7 @@ RUN apt-get update -qq \
 	build-essential ssh-client git subversion curl wget smbclient \
 	check psmisc \
 	autoconf automake libtool gettext autoconf-archive pkg-config \
+	libjansson-dev \
 	zlib1g-dev \
 	ruby bundler \
 	ssmtp \
