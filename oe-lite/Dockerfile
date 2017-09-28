@@ -20,7 +20,7 @@ RUN apt-get update -qq \
 	python-ply python-setuptools python-pysqlite2 python-magic \
 	python-pycurl python-svn python-dev \
 	build-essential \
-	wget bzip2 zip unzip quilt \
+	wget bzip2 zip unzip quilt tofrodos \
 	autoconf automake libtool pkg-config \
 	gawk bison flex texinfo curl ncurses-dev \
 	groff-base cpio intltool liblzo2-2 bc \
