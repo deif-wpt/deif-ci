@@ -25,6 +25,7 @@ RUN apt-get update -qq \
 	gawk bison flex texinfo curl ncurses-dev \
 	groff-base cpio intltool liblzo2-2 bc \
 	gperf tree \
+	ruby \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
