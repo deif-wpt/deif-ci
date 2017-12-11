@@ -14,6 +14,7 @@ RUN apt-get update -qq \
 	ssmtp \
 	libnl-3-dev \
 	libnl-cli-3-dev libnl-genl-3-dev libnl-nf-3-dev libnl-route-3-dev \
+	ucspi-unix ucspi-tcp \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
