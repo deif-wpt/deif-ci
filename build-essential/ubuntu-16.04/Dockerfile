@@ -18,6 +18,8 @@ RUN apt-get update -qq \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
+RUN gem install ceedling --version 0.28.2
+
 # /bin/sh should be bash
 RUN echo "dash dash/sh boolean false" | debconf-set-selections \
  && dpkg-reconfigure dash
