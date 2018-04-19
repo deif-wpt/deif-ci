@@ -23,7 +23,7 @@ RUN apt-get update -qq \
 	wget bzip2 zip unzip quilt tofrodos \
 	autoconf automake libtool pkg-config \
 	gawk bison flex texinfo curl ncurses-dev \
-	groff-base cpio intltool liblzo2-2 bc \
+	groff-base help2man cpio intltool liblzo2-2 bc \
 	gperf tree \
 	ruby \
  && apt-get clean \
