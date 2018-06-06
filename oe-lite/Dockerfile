@@ -26,6 +26,8 @@ RUN apt-get update -qq \
 	groff-base help2man cpio intltool liblzo2-2 bc \
 	gperf tree \
 	ruby \
+	doxygen python-pip \
+	texlive texlive-latex-extra latexmk graphviz \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -35,6 +37,9 @@ RUN wget -qO- https://github.com/oe-lite/bakery/archive/v4.2.0.tar.gz \
  && cd bakery-4.2.0 && ./setup.py install \
  && cd .. \
  && rm -rf bakery-4.2.0 v4.2.0.tar.gz
+
+# Install sphinx documentation system
+RUN pip install sphinx breathe recommonmark
 
 # Add non-root user
 RUN useradd -m -s /bin/bash user \
