@@ -15,6 +15,7 @@ RUN apt-get update -qq \
 	libnl-3-dev \
 	libnl-cli-3-dev libnl-genl-3-dev libnl-nf-3-dev libnl-route-3-dev \
 	ucspi-unix ucspi-tcp \
+	python3-pip \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -32,3 +33,7 @@ RUN git clone https://github.com/skarnet/skalibs.git \
  && make install \
  && cd .. \
  && rm -rf skalibs
+
+# Install labgrid-tools, note python3-pip above
+RUN git clone https://github.com/deif-wpt/labgrid.git /opt/labgrid \
+ && pip3 install -e /opt/labgrid
