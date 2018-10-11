@@ -39,7 +39,9 @@ RUN wget -qO- https://github.com/oe-lite/bakery/archive/v4.2.0.tar.gz \
  && rm -rf bakery-4.2.0 v4.2.0.tar.gz
 
 # Install sphinx documentation system
-RUN pip install sphinx breathe recommonmark
+# Note: sphinx 1.8.0 and 1.8.1 looks buggy, bitching about (throwing
+# exceptions) DOCUTILSCONFIG env variable.
+RUN pip install sphinx==1.7.9 breathe recommonmark
 
 # Add non-root user
 RUN useradd -m -s /bin/bash user \
