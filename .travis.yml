@@ -9,5 +9,6 @@ script:
 - docker build -t deifwpt/build-essential:14.04 build-essential/ubuntu-14.04
 - docker build -t deifwpt/build-essential:16.04 build-essential/ubuntu-16.04
 - docker build -t deifwpt/build-essential:18.04 build-essential/ubuntu-18.04
+- docker build -t deifwpt/build-essential:20.04 build-essential/ubuntu-20.04
 - docker build -t deifwpt/dind docker/dind
 - docker build -t deifwpt/oe-lite oe-lite
