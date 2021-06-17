@@ -1,0 +1,27 @@
+image: docker
+
+
+deploy:
+  tags:
+    - docker
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    # This script tags with the branch name. To make an official do a tag. 
+    - echo docker build -t $CI_REGISTRY_IMAGE:oe-lite$CI_COMMIT_BRANCH$CI_COMMIT_TAG oe-lite
+    - docker build -t $CI_REGISTRY_IMAGE:oe-lite$CI_COMMIT_BRANCH$CI_COMMIT_TAG oe-lite
+    - docker build -t $CI_REGISTRY_IMAGE:build-essential$CI_COMMIT_BRANCH$CI_COMMIT_TAG build-essential/ubuntu-20.04
+
+    - docker push $CI_REGISTRY_IMAGE:build-essential$CI_COMMIT_BRANCH$CI_COMMIT_TAG
+    - echo Pushed $CI_REGISTRY_IMAGE:build-essential$CI_COMMIT_BRANCH$CI_COMMIT_TAG
+
+    - docker push $CI_REGISTRY_IMAGE:oe-lite$CI_COMMIT_BRANCH$CI_COMMIT_TAG
+    - echo Pushed $CI_REGISTRY_IMAGE:oe-lite$CI_COMMIT_BRANCH$CI_COMMIT_TAG
+    # The image is pushed as bot tagged and nontagged. Note that the last executed is the official non tagged.
+    - docker tag $CI_REGISTRY_IMAGE:build-essential$CI_COMMIT_BRANCH$CI_COMMIT_TAG $CI_REGISTRY_IMAGE:build-essential$CI_COMMIT_BRANCH
+    - docker push $CI_REGISTRY_IMAGE:build-essential$CI_COMMIT_BRANCH
+    - echo Pushed $CI_REGISTRY_IMAGE:build-essential$CI_COMMIT_BRANCH
+
+    - docker tag $CI_REGISTRY_IMAGE:oe-lite$CI_COMMIT_BRANCH$CI_COMMIT_TAG $CI_REGISTRY_IMAGE:oe-lite$CI_COMMIT_BRANCH
+    - docker push $CI_REGISTRY_IMAGE:oe-lite$CI_COMMIT_BRANCH
+    - echo Pushed $CI_REGISTRY_IMAGE:oe-lite$CI_COMMIT_BRANCH
+

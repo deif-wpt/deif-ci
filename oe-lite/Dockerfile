@@ -1,7 +1,5 @@
 FROM debian:8
 
-MAINTAINER Esben Haabendal, eha@deif.com
-
 # The following volumes is expected/used:
 #   /home/user/manifest      OE-lite manifest
 #   /home/user/ingredients   OE-lite source/ingredients directory
@@ -41,7 +39,8 @@ RUN wget -qO- https://github.com/oe-lite/bakery/archive/v4.2.0.tar.gz \
 # Install sphinx documentation system
 # Note: sphinx 1.8.0 and 1.8.1 looks buggy, bitching about (throwing
 # exceptions) DOCUTILSCONFIG env variable.
-RUN pip install sphinx==1.7.9 breathe recommonmark
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt
 
 # Add non-root user
 RUN useradd -m -s /bin/bash user \
