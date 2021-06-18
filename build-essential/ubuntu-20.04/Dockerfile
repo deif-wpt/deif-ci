@@ -16,6 +16,8 @@ RUN apt-get update -qq \
 	ucspi-unix ucspi-tcp \
 	python3-pip \
 	cppcheck \
+	python-sphinx python-breathe python-recommonmark \
+ 	texlive texlive-latex-extra graphviz \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
