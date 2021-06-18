@@ -1,6 +1,6 @@
 Babel==2.6.0
 CommonMark==0.5.4
-Jinja2==2.10
+Jinja2==2.11.3
 Magic-file-extensions==0.2
 MarkupSafe==1.1.0
 Pygments==2.2.0
