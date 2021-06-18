@@ -28,7 +28,7 @@ pyparsing==2.3.0
 pysqlite==2.6.3
 pytz==2018.7
 recommonmark==0.4.0
-requests==2.4.3
+requests==2.20.0
 six==1.8.0
 snowballstemmer==1.2.1
 sphinxcontrib-websupport==1.1.0
