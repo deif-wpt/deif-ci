@@ -20,7 +20,7 @@ ndg-httpsclient==0.3.2
 oe-lite==4.2.0-r0
 packaging==18.0
 ply==3.4
-pyOpenSSL==0.14
+pyOpenSSL==17.5.0
 pyasn1==0.1.7
 pycparser==2.10
 pycurl==7.19.5
